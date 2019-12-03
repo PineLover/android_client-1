@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,7 +28,7 @@ public class joinVoteActivity extends AppCompatActivity {
     ArrayAdapter adapter;
     TextView VoteTitle;
     Button VoteButton;
-
+    int voteId_Int;
     String name;
 
 
@@ -53,6 +54,8 @@ public class joinVoteActivity extends AppCompatActivity {
         candidates = intent.getExtras().getStringArrayList("candidates");
         name = intent.getExtras().getString("title");
 
+        //System.out.println("voteId_Int: "+ intent.getExtras().getInt("voteid"));
+        voteId_Int = intent.getExtras().getInt("voteid");
 
         //화면 ui들
         VoteTitle = (TextView) findViewById(R.id.voteTitle_join);
@@ -75,15 +78,29 @@ public class joinVoteActivity extends AppCompatActivity {
 
             String email_Join;
             Integer vote_id_Join;
-            Integer candidate_Join;
+            Integer candidate_Join = -1;
 
             @Override
             public void onClick(View v){
 
                 try {
-                    joinVoteJsonObject.put("email","omnipede@naver.com");
-                    joinVoteJsonObject.put("vote_id",47);
-                    joinVoteJsonObject.put("candidate",1);
+                    SparseBooleanArray checkedItems = listview.getCheckedItemPositions();
+                    int count = adapter.getCount() ;
+
+                    for (int i = count-1; i >= 0; i--) {
+                        if (checkedItems.get(i)) {
+                            if( candidate_Join == -1)
+                            candidate_Join = i;
+                            else {
+                                Toast.makeText(joinVoteActivity.this, "choose only one candidate", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }
+
+
+                    joinVoteJsonObject.put("email",LoginActivity.EmailPassWord.Email);
+                    joinVoteJsonObject.put("vote_id",voteId_Int);
+                    joinVoteJsonObject.put("candidate",candidate_Join);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

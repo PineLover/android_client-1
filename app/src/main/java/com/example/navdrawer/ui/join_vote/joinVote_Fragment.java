@@ -29,7 +29,7 @@ public class joinVote_Fragment extends Fragment {
 
     EditText voteId_EditText;
     Button sendId_Button;
-
+    Integer voteId_Int;
 
     //for responsed datas
 
@@ -47,12 +47,12 @@ public class joinVote_Fragment extends Fragment {
 
 
         sendId_Button.setOnClickListener(new View.OnClickListener(){
-            String voteId_string;
-            int voteId_Int;
 
-            NetworkTask ConnectCreateVoteModel = new joinVote_Fragment.NetworkTask();
+
+
             @Override
             public void onClick(View v) {
+                NetworkTask ConnectCreateVoteModel = new joinVote_Fragment.NetworkTask();
                 //for test not implemented list adding ui
                 //voteId_string =  voteId_EditText.getText().toString();
                 //         voteId_Int = Integer.parseInt(voteId_string);
@@ -95,6 +95,9 @@ public class joinVote_Fragment extends Fragment {
             Intent intent = new Intent(getActivity() , joinVoteActivity.class);
             intent.putExtra("candidates",candidates);
             intent.putExtra("title",name);
+
+            System.out.println("before intent voteId_Int: "+ voteId_Int);
+            intent.putExtra("voteid",voteId_Int);
             startActivityForResult(intent,REQUEST_TEST);
 
         }

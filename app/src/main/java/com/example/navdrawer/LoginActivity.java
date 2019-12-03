@@ -21,10 +21,10 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText emailInput;
     EditText pwInput;
-
-    private static class EmailPassWord{
-        String Email;
-        String PassWord;
+    //dh public으로 바꿀게요~
+    public static class EmailPassWord{
+        public static String Email;
+        public static String PassWord;
 
         EmailPassWord(String Email,String PassWord){
             this.Email = Email;
