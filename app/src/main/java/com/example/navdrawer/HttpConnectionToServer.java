@@ -216,6 +216,8 @@ public class  HttpConnectionToServer {
             urlString = "http://www.ballotchain.net/vote/";
             urlString = urlString + Integer.toString(voteId);   // URL 뒤에 투표코드를 concat.
 
+            System.out.println("url: " + urlString);
+
             URL url = new URL(urlString);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 

@@ -47,13 +47,12 @@ public class joinVoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join_vote);
-
+        System.out.println("in joinVoteActivity");
         Intent intent = getIntent();
 
         candidates = intent.getExtras().getStringArrayList("candidates");
         name = intent.getExtras().getString("title");
-        System.out.println(candidates);
-        System.out.println(name);
+
 
         //화면 ui들
         VoteTitle = (TextView) findViewById(R.id.voteTitle_join);
