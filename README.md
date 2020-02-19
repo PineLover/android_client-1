@@ -17,5 +17,5 @@
 
 <img src="https://github.com/PineLover/android_client-1/blob/master/%ED%88%AC%ED%91%9C%EC%83%9D%EC%84%B1%20%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98.PNG" height=50% width=50% >
 
-<img src="https://github.com/PineLover/android_client-1/blob/master/%ED%88%AC%ED%91%9C%EC%B0%B8%EC%97%AC%20%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98.PNG" height="50% width=50% >
+<img src="https://github.com/PineLover/android_client-1/blob/master/%ED%88%AC%ED%91%9C%EC%B0%B8%EC%97%AC%20%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98.PNG" height=50% width=50% >
 
