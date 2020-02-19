@@ -1,4 +1,4 @@
-# 시연 영상
+# 시연 영상 (클릭하면 유트브로 재생됩니다.)
 
 [![시연 영상](http://img.youtube.com/vi/eLuke9snLPE/0.jpg)](http://www.youtube.com/watch?v=eLuke9snLPE?t=0s)
 
